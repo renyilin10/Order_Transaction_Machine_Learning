@@ -29,7 +29,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 y_pred_RF = classifier_RF.predict(X_test)
 cm_RF = confusion_matrix(y_test, y_pred_RF)
 print(cm_RF)
-accuracy_score(y_test, y_pred_RF) ## base model accuracy
+print(accuracy_score(y_test, y_pred_RF)) ## base model accuracy
 
 # get importance
 importance_RF = classifier_RF.feature_importances_
@@ -39,7 +39,7 @@ df_rf = pd.DataFrame({'Feature_Names': dataset.iloc[:, 1:-1].columns, 'Importanc
 
 df_rf1 = df_rf.sort_values(by ='Importance', ascending = False)
 
-df_rf1
+print(df_rf1)
 
 ## Hyperparameter turning
 n_estimators = [int(x) for x in np.linspace(start = 10, stop = 100, num =12)] 
@@ -111,7 +111,7 @@ classifier_RF_Best.fit(X_train, y_train)
 y_pred_RF_Best = classifier_RF_Best.predict(X_test)
 cm_RF_Best = confusion_matrix(y_test, y_pred_RF_Best)
 print(cm_RF_Best)
-accuracy_score(y_test, y_pred_RF_Best) ## best model accuracy from Rangrid_search
+print(accuracy_score(y_test, y_pred_RF_Best)) ## best model accuracy from Rangrid_search
 
 
 ## Get the feature importance from the best model
@@ -122,7 +122,7 @@ df_rf_Rangrid = pd.DataFrame({'Feature_Names': dataset.iloc[:, 1:-1].columns, 'I
 
 df_rf1_Rangrid = df_rf_Rangrid.sort_values(by ='Importance', ascending = False)
 
-df_rf1_Rangrid
+print(df_rf1_Rangrid)
                         
 
 ## XGBoost ## 
